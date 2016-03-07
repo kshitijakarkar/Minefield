@@ -22,3 +22,29 @@ TEST(FieldTest, placeMineInBounds)
 	minefield.placeMine(4,5);
 	ASSERT_EQ( MINE_HIDDEN, minefield.get(4,5) );
 }
+
+TEST(FieldTest, MINEEXISTS)
+{
+	Field minefield;
+	
+//	minefield.isSafe(4,5);
+	ASSERT_FALSE(minefield.isSafe(4,5)  );
+}
+
+TEST(FieldTest, MINENOTEXISTS)
+{
+	Field minefield;
+	
+//	minefield.isSafe(4,5);
+	ASSERT_TRUE( minefield.isSafe(1,2));
+}
+TEST(FieldTest, OUTOFBOUND)
+{
+	Field minefield;
+	
+//	minefield.isSafe(4,5);
+  
+	ASSERT_TRUE(minefield.get(9,9));
+	
+	
+}
